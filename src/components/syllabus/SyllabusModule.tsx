@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { ListChecks, BarChart3, CalendarRange, Sparkles } from "lucide-react";
+import {
+  ListChecks,
+  BarChart3,
+  CalendarRange,
+  Sparkles,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import type { SyllabusRow } from "../../types/database";
 import SyllabusManagement from "./SyllabusManagement";
@@ -10,7 +16,11 @@ import AiPrediction from "./AiPrediction";
 
 type Tab = "manage" | "progress" | "trend" | "predict";
 
-const TABS: { id: Tab; label: string; icon: React.ComponentType<{ size?: number }> }[] = [
+const TABS: {
+  id: Tab;
+  label: string;
+  icon: LucideIcon;
+}[] = [
   { id: "manage", label: "Syllabus & Chapters", icon: ListChecks },
   { id: "progress", label: "Progress", icon: BarChart3 },
   { id: "trend", label: "Monthly & Weekly", icon: CalendarRange },
